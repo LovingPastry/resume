@@ -23,7 +23,7 @@
         field.remove();
         button.focus({ preventScroll: true });
       }
-      status.textContent = success ? '微信号已复制：18977189094' : '请长按或选择号码复制：18977189094';
+      status.textContent = success ? '微信号已复制：lzc18977189094' : '请长按或选择号码复制：lzc18977189094';
       clearTimeout(statusTimer);
       statusTimer = setTimeout(() => { status.textContent = ''; }, 4500);
     });
