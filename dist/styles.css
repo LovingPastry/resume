@@ -39,3 +39,21 @@ main>.section-nav{display:none}
 @media(max-width:1000px){.header-inner{gap:16px}.header-inner .section-nav a{padding-inline:6px;font-size:.7rem}}
 @media(max-width:760px){.site-header{min-height:60px;padding-block:8px}.header-inner{gap:12px}.header-inner .brand small{display:none}.header-inner .brand{font-size:.9rem}.header-inner .brand-mark{width:32px;height:32px;font-size:1.45rem}.header-inner .section-nav{overflow-x:auto;scrollbar-width:none;display:flex;justify-content:flex-start}.header-inner .section-nav::-webkit-scrollbar{display:none}.header-inner .section-nav a{font-size:.68rem;padding:6px 7px}.header-inner .section-nav a:last-child{margin-left:0}.header-inner .theme-toggle{flex:0 0 auto}.page-anchor{top:-70px}}
 @media(max-width:560px){.header-inner .brand{display:none}.header-inner .section-nav{order:1}.header-inner .theme-toggle{order:2}.header-inner{justify-content:flex-end}}
+/* Responsive header: keep the medium-width layout intentional */
+@media (min-width:1001px){.header-inner{flex-wrap:nowrap}.header-inner .section-nav{display:flex;align-items:center}}
+@media (min-width:561px) and (max-width:1000px){
+  .site-header{padding-block:12px}
+  .header-inner{display:grid;grid-template-columns:1fr auto;grid-template-areas:"brand theme" "nav nav";gap:10px 18px}
+  .header-inner .brand{grid-area:brand}
+  .header-inner .theme-toggle{grid-area:theme}
+  .header-inner .section-nav{grid-area:nav;display:flex;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line-soft);padding-top:7px}
+  .header-inner .section-nav::-webkit-scrollbar{display:none}
+  .header-inner .section-nav a{font-size:.78rem;padding:4px 14px}
+  .header-inner .section-nav a:first-child{padding-left:0}
+  .header-inner .section-nav a:last-child{margin-left:0}
+}
+@media (max-width:560px){
+  .site-header{padding-block:9px}
+  .header-inner{display:flex;flex-wrap:nowrap;gap:10px}
+  .header-inner .section-nav{flex:1;min-width:0;border-top:0;padding-top:0}
+}
