@@ -106,4 +106,50 @@
       slot.appendChild(figure);
     }
   });
+
+  // Theme: follow system by default, remember an explicit choice.
+  const THEME_KEY = 'resume-theme';
+  const THEMES = ['system', 'light', 'dark'];
+  const LABEL = { system: '跟随系统', light: '浅色模式', dark: '深色模式' };
+  const root = document.documentElement;
+  const media = window.matchMedia('(prefers-color-scheme: light)');
+  const toggle = document.querySelector('#theme-toggle');
+  const toggleText = toggle && toggle.querySelector('.theme-toggle-text');
+
+  function stored() {
+    try {
+      const value = localStorage.getItem(THEME_KEY);
+      return THEMES.includes(value) ? value : 'system';
+    } catch (_) { return 'system'; }
+  }
+  function resolved(mode) {
+    if (mode === 'system') return media.matches ? 'light' : 'dark';
+    return mode;
+  }
+  function paint() {
+    const mode = stored();
+    const theme = resolved(mode);
+    if (mode === 'system') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', mode);
+    root.dataset.themeMode = mode;
+    if (!toggle) return;
+    const next = THEMES[(THEMES.indexOf(mode) + 1) % THEMES.length];
+    toggle.setAttribute('aria-label', `当前${LABEL[mode]}，点击切换到${LABEL[next]}`);
+    toggle.setAttribute('title', LABEL[mode]);
+    toggle.dataset.theme = theme;
+    toggle.dataset.mode = mode;
+    if (toggleText) toggleText.textContent = LABEL[mode];
+  }
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = THEMES[(THEMES.indexOf(stored()) + 1) % THEMES.length];
+      try {
+        if (next === 'system') localStorage.removeItem(THEME_KEY);
+        else localStorage.setItem(THEME_KEY, next);
+      } catch (_) { /* private mode */ }
+      paint();
+    });
+  }
+  media.addEventListener('change', () => { if (stored() === 'system') paint(); });
+  paint();
 })();
