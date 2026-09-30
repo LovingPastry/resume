@@ -102,3 +102,9 @@ details{border-top:1px solid var(--line)}
 @media(max-width:760px){.research-grid{gap:18px}}
 /* Blue highlight system: the page uses a black/white base with blue for actions, states, and emphasis. */
 .achievement-list li::marker{color:var(--accent)}.text-link:hover{color:var(--accent-soft)}.contact-section{border-top-color:var(--accent-line)}.copy-button{background:var(--accent-wash);border-color:var(--accent-line);color:var(--accent-soft)}.copy-button:hover{background:var(--accent-wash-hover)}.copy-status{background:var(--accent);color:var(--on-accent)}.brand-mark{border-color:var(--accent-line)}.panel-bottom span{color:var(--blue)}
+/* Resume experience layout override */
+.experience{grid-template-columns:1fr!important}
+.experience-meta{display:flex;align-items:center;margin-bottom:14px}
+.experience-meta .date{font-size:1.05rem;color:var(--ink-soft);font-weight:600}
+.company-index,.company-brand{display:none!important}
+@media(max-width:760px){.experience-meta{margin-bottom:10px}.experience-meta .date{font-size:.92rem}}

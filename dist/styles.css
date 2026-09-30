@@ -69,3 +69,10 @@ main>.section-nav{display:none}
 .experience-videos video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line-soft);border-radius:5px;background:var(--panel-row-bg)}
 .experience-videos figcaption{margin-top:7px;color:var(--muted);font-size:.75rem;line-height:1.5}
 @media(max-width:760px){.experience-videos{grid-template-columns:1fr;gap:16px}.experience-videos video{aspect-ratio:16/9}.experience-videos figcaption{font-size:.78rem}}
+/* Internship cards use the full content width; date no longer sits in a sparse rail. */
+.experience{grid-template-columns:1fr}
+.experience-meta{display:flex;align-items:center;margin-bottom:14px}
+.experience-meta .date{font-size:1.05rem;color:var(--ink-soft);font-weight:600}
+.experience-body{min-width:0}
+.company-brand{display:none!important}
+@media(max-width:760px){.experience-meta{margin-bottom:10px}.experience-meta .date{font-size:.92rem}}
