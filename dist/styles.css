@@ -57,3 +57,15 @@ main>.section-nav{display:none}
   .header-inner{display:flex;flex-wrap:nowrap;gap:10px}
   .header-inner .section-nav{flex:1;min-width:0;border-top:0;padding-top:0}
 }
+/* Internship hierarchy: dates first, sequence numbers removed, employer marks added */
+.experience-meta .date{font-size:1rem;color:var(--ink-soft);font-weight:600;letter-spacing:.02em}
+.company-index{display:none!important}
+.company-brand{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:14px;border-top:1px solid var(--line-soft);color:var(--muted);font-size:.75rem;letter-spacing:.04em}
+.brand-monogram{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:24px;padding:0 7px;border:1px solid var(--line-strong);border-radius:4px;color:var(--accent);font:600 .7rem Consolas,monospace;letter-spacing:.08em}
+.brand-divider{color:var(--text-dim)}
+@media(max-width:760px){.experience-meta .date{font-size:.9rem}.company-brand{margin-top:18px;padding-top:12px;font-size:.7rem}}
+.experience-videos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.experience-videos figure{margin:0;min-width:0}
+.experience-videos video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line-soft);border-radius:5px;background:var(--panel-row-bg)}
+.experience-videos figcaption{margin-top:7px;color:var(--muted);font-size:.75rem;line-height:1.5}
+@media(max-width:760px){.experience-videos{grid-template-columns:1fr;gap:16px}.experience-videos video{aspect-ratio:16/9}.experience-videos figcaption{font-size:.78rem}}
