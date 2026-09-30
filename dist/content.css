@@ -108,3 +108,9 @@ details{border-top:1px solid var(--line)}
 .experience-meta .date{font-size:1.05rem;color:var(--ink-soft);font-weight:600}
 .company-index,.company-brand{display:none!important}
 @media(max-width:760px){.experience-meta{margin-bottom:10px}.experience-meta .date{font-size:.92rem}}
+.identity-copy,.copy-inline{font:inherit;text-align:left;cursor:pointer;background:none;border:0;padding:0;color:inherit}
+.identity-copy{display:inline-flex;align-items:baseline;gap:4px}
+.identity-copy:hover strong,.identity-copy:focus-visible strong,.copy-inline:hover strong,.copy-inline:focus-visible strong{color:var(--accent)}
+.copy-inline{display:flex;width:100%;justify-content:center;align-items:flex-start}
+.copy-inline .contact-label{width:100%;text-align:left}
+.copy-inline strong{font-size:1rem;color:var(--ink-soft);font-weight:500}
